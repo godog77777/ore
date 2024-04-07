@@ -67,8 +67,8 @@ grep -qxF 'export PATH="$HOME/.cargo/bin:$PATH"' ~/.bashrc || echo 'export PATH=
 source ~/.bashrc
 
 # 获取用户输入的 RPC 地址或使用默认地址
-read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://rpc.shyft.to?api_key=aETDJG1L0rofURrN): " custom_rpc
-RPC_URL=${custom_rpc:-https://rpc.shyft.to?api_key=aETDJG1L0rofURrN}
+read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5): " custom_rpc
+RPC_URL=${custom_rpc:-https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5}
 
 # 获取用户输入的线程数或使用默认值
 read -p "请输入挖矿时要使用的线程数 (默认设置 4): " custom_threads
@@ -121,8 +121,8 @@ source ~/.bashrc
 
 
     # 获取用户输入的 RPC 地址或使用默认地址
-    read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://rpc.shyft.to?api_key=aETDJG1L0rofURrN): " custom_rpc
-    RPC_URL=${custom_rpc:-https://rpc.shyft.to?api_key=aETDJG1L0rofURrN}
+    read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5): " custom_rpc
+    RPC_URL=${custom_rpc:-https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5}
 
     # 获取用户输入的线程数或使用默认值
     read -p "请输入挖矿时要使用的线程数 (默认设置 4): " custom_threads
@@ -175,8 +175,8 @@ fi
 
 function start() {
 # 获取用户输入的 RPC 地址或使用默认地址
-read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://rpc.shyft.to?api_key=aETDJG1L0rofURrN): " custom_rpc
-RPC_URL=${custom_rpc:-https://rpc.shyft.to?api_key=aETDJG1L0rofURrN}
+read -p "请输入自定义的 RPC 地址，建议使用免费的Quicknode 或者alchemy SOL rpc(默认设置使用 https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5): " custom_rpc
+RPC_URL=${custom_rpc:-https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5}
 
 # 获取用户输入的线程数或使用默认值
 read -p "请输入挖矿时要使用的线程数 (默认设置 4): " custom_threads
@@ -201,12 +201,12 @@ echo "使用 'screen -r $session_name' 命令重新连接到此会话。"
 
 # 查询奖励
 function view_rewards() {
-    ore --rpc https://rpc.shyft.to?api_key=aETDJG1L0rofURrN --keypair ~/.config/solana/id.json rewards
+    ore --rpc https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5 --keypair ~/.config/solana/id.json rewards
 }
 
 # 领取奖励
 function claim_rewards() {
-    ore --rpc https://rpc.shyft.to?api_key=aETDJG1L0rofURrN --keypair ~/.config/solana/id.json claim
+    ore --rpc https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5 --keypair ~/.config/solana/id.json claim
 }
 
 
@@ -297,7 +297,7 @@ end=${range[1]}
 
 # 执行循环
 for i in $(seq $start $end); do
-  ore --rpc https://rpc.shyft.to?api_key=aETDJG1L0rofURrN --keypair ~/.config/solana/id$i.json --priority-fee 1 rewards
+  ore --rpc https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5 --keypair ~/.config/solana/id$i.json --priority-fee 1 rewards
 done
 
 }
@@ -377,7 +377,7 @@ end=${range[1]}
 
 # 执行循环
 for i in $(seq $start $end); do
-  ore --rpc https://rpc.shyft.to?api_key=aETDJG1L0rofURrN --keypair ~/.config/solana/id$i.json --priority-fee 1 claim
+  ore --rpc https://solana-mainnet.g.alchemy.com/v2/y9rwrR-6irGZSBTsxeEVmKRQXUyXgsM5 --keypair ~/.config/solana/id$i.json --priority-fee 1 claim
 done
 
 }
